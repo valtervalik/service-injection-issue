@@ -3,6 +3,8 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { NextFunction } from 'express';
 import { BcryptService } from 'src/hashing/bcrypt.service';
+import { HashingModule } from 'src/hashing/hashing.module';
+import { HashingService } from 'src/hashing/hashing.service';
 import { User, UserDocument, UserSchema } from 'src/users/schemas/user.schema';
 
 @Module({
@@ -19,10 +21,9 @@ import { User, UserDocument, UserSchema } from 'src/users/schemas/user.schema';
     MongooseModule.forFeatureAsync([
       {
         name: User.name,
-        useFactory: () => {
+        useFactory: (/*hashingService: HashingService*/) => {
           //This code works as expected but...
           //Instead of create a new instance, I rather inject the service with the inject array
-          //Feel free of creating a hashing.module.ts file if you need as in the posted example
           const hashingService = new BcryptService();
           const schema = UserSchema;
 
@@ -35,6 +36,8 @@ import { User, UserDocument, UserSchema } from 'src/users/schemas/user.schema';
           });
           return schema;
         },
+        // imports: [HashingModule],
+        // inject: [HashingService],
       },
     ]),
   ],

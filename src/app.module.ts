@@ -4,6 +4,7 @@ import { ConfigModule } from '@nestjs/config';
 import { AuthModule } from './auth/auth.module';
 import { RedisModule } from './redis/redis.module';
 import { DatabaseModule } from './database/database.module';
+import { HashingModule } from './hashing/hashing.module';
 
 @Module({
   imports: [
@@ -15,6 +16,7 @@ import { DatabaseModule } from './database/database.module';
     UsersModule,
     AuthModule,
     RedisModule,
+    HashingModule,
   ],
   controllers: [],
   providers: [],
