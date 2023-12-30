@@ -1,0 +1,18 @@
+export enum States {
+  LaHabana = 'La Habana',
+  Matanzas = 'Matanzas',
+  Cienfuegos = 'Cienfuegos',
+  VillaClara = 'Villa Clara',
+  SanctiSpiritus = 'Sancti Spiritus',
+  CiegoDeAvila = 'Ciego de Avila',
+  Camaguey = 'Camaguey',
+  LasTunas = 'Las Tunas',
+  Holguin = 'Holguin',
+  Granma = 'Granma',
+  SantiagoDeCuba = 'Santiago de Cuba',
+  Guantanamo = 'Guantanamo',
+  PinarDelRio = 'Pinar del Rio',
+  Artemisa = 'Artemisa',
+  Mayabeque = 'Mayabeque',
+  IslaDeLaJuventud = 'Isla de la Juventud',
+}
