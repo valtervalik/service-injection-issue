@@ -15,6 +15,6 @@ export class GoogleAuthController {
     @Body() tokenDto: GoogleTokenDto,
     @Res({ passthrough: true }) response: Response,
   ) {
-    return this.googleAuthService.authenticate(tokenDto.token, response);
+    // return this.googleAuthService.authenticate(tokenDto.token, response);
   }
 }

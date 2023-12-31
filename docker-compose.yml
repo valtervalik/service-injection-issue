@@ -5,11 +5,11 @@ services:
     image: redis
     restart: always
     ports:
-      - '${REDIS_PORT}:${REDIS_PORT}'
+      - '16379:6379'
   mongo:
     image: mongo
     restart: always
     ports:
-      - '${DB_PORT}:${DB_PORT}'
+      - '27017:27017'
     environment:
-      DB_NAME: ${DB_NAME}
+      DB_NAME: mongo
