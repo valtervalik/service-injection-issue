@@ -5,8 +5,6 @@
 [circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
 [circleci-url]: https://circleci.com/gh/nestjs/nest
 
-<h1 align="center"> Nestjs backend for AVC envíos platform </h1>
-
 ## Description
 
 ## Steps to Run the Application
@@ -14,13 +12,13 @@
 1. **Clone the repository**: Use git clone command to clone the repository to your local machine.
 
 ```bash
-git clone https://github.com/valtervalik/AVC_backend.git
+git clone https://github.com/valtervalik/service-injection-issue.git
 ```
 
 2. **Enter the project folder**:
 
 ```bash
-cd AVC_backend
+cd service-injection-issue
 ```
 
 3. **Install dependencies**: Run any of the following commands to install all the necessary dependencies.
