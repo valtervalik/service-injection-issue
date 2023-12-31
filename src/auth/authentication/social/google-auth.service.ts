@@ -27,28 +27,4 @@ export class GoogleAuthService implements OnModuleInit {
     const clientSecret = this.configService.get('GOOGLE_CLIENT_SECRET');
     this.oauthClient = new OAuth2Client(clientId, clientSecret);
   }
-
-  async authenticate(token: string, response: Response) {
-    try {
-      const loginTicket = await this.oauthClient.verifyIdToken({
-        idToken: token,
-      });
-      const { email, sub: googleId } = loginTicket.getPayload();
-
-      const user = await this.userModel.findOne({ googleId });
-      if (user) {
-        return this.authenticationService.generateTokens(user, response);
-      } else {
-        const newUser = new this.userModel({ email, googleId });
-        await newUser.save();
-        return this.authenticationService.generateTokens(newUser, response);
-      }
-    } catch (err) {
-      if (err.code === 11000) {
-        throw new ConflictException('Email already in use');
-      }
-
-      throw new UnauthorizedException();
-    }
-  }
 }

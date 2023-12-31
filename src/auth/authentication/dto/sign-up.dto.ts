@@ -25,7 +25,7 @@ export class SignUpDto {
   email: string;
 
   @IsString()
-  @IsPhoneNumber('CU')
+  // @IsPhoneNumber('CU')
   phone: string;
 
   @IsString()

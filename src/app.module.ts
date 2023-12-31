@@ -1,10 +1,8 @@
 import { Module } from '@nestjs/common';
-import { UsersModule } from './users/users.module';
 import { ConfigModule } from '@nestjs/config';
 import { AuthModule } from './auth/auth.module';
-import { RedisModule } from './redis/redis.module';
 import { DatabaseModule } from './database/database.module';
-import { HashingModule } from './hashing/hashing.module';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
@@ -13,10 +11,7 @@ import { HashingModule } from './hashing/hashing.module';
       isGlobal: true,
     }),
     DatabaseModule,
-    UsersModule,
     AuthModule,
-    RedisModule,
-    HashingModule,
   ],
   controllers: [],
   providers: [],
